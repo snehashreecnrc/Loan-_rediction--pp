@@ -13,7 +13,7 @@ df['Income_Loan_Ratio']=df['TotalIncome']/df['LoanAmount']
 
 #prepare data
 
-X=df[['Credit_History','ApplicantIncome','LoanAmount_log','TotalIncome_log','Income_Loan_Ratio']]
+X=df[['Credit_History','ApplicantIncome','LoanAmount','TotalIncome','Income_Loan_Ratio']]
 y=df['Loan_Status'].map({'Y':1,'N':0})
 
 #handel missing values
