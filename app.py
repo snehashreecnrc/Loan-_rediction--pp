@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 
 #load data
-df=pd.read_csv("train.csv")
+df=pd.read_csv("train(1).csv")
 
 #feature enineering
 df['TotalIncome']=df['ApplicantIncome']+df['CoapplicantIncome']
