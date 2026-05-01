@@ -63,6 +63,9 @@ st.bar_chart(imp_df.set_index('Feature'))
 if credit==0:
     st.error("❌ High Risk:Por Credit History")
 
+if credit_co==0:
+    st.error(" ❌ High Risk:Por Credit History")
+
 
 
 
