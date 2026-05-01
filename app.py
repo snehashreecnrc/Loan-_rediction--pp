@@ -33,6 +33,7 @@ st.title("🏦 Loan Approval Prediction")
 credit = st.selectbox("Credit History (1 = Good, 0 = Bad)", [1,0])
 income = st.number_input("Applicant Income")
 loan = st.number_input("Loan Amount")
+coApplicant = st.selectbox("Co Applicant (Yes, No)")
 credit_co= st.selectbox("Co-App Credit History (1 = Good,0= Bad)",[1,0])
 co_income = st.number_input("Coapplicant Income")
 
