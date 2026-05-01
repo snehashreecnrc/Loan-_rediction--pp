@@ -49,6 +49,19 @@ if st.button("Predict"):
     else:
         st.error(f"❌ Loan Rejected({proba[0][1]*100:.2f}% confidence)")
 
+importance= model.feature_importances_
+features=X.columns
+
+imp_df= pd.DataFrame({
+    'Feature':features,
+    'Importance':importance
+}).sort_values(by='Importance', ascending=False)
+
+st.subheader("Feature Importance")
+st.bar_chart(imp_df.set_index('Feature'))
+if credit==0:
+    st.error("❌ High Risk:Por Credit History")
+
 
 
 
