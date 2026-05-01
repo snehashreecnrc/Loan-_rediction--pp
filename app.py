@@ -42,12 +42,12 @@ input_data = np.array([[credit, income, loan, total_income, ratio]])
 input_scaled = scaler.transform(input_data)
 
 if st.button("Predict"):
-    result = model.predict(input_scaled)
+    proba = model.predict_proba(input_scaled)
     
-    if result[0] == 1:
-        st.success("Loan Approved ✅")
+    if proba[0][1]>0.6:
+        st.success( f"✅ Loan Approved ({proba[0][1]*100:.2f}% confidence)")
     else:
-        st.error("Loan Rejected ❌")
+        st.error(f"❌ Loan Rejected({proba[0][1]*100:.2f}% confidence)")
 
 
 
