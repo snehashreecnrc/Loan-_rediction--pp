@@ -69,8 +69,8 @@ input_scaled = scaler.transform(input_data)
 #---------------------Prediction--------------
 if st.button("Predict"):
 
-if foir>0.5:
-        dt.error("❌ High Risk: Obligation too
+    if foir > 0.5:
+        dt.warning("❌ High FOIR(>50%)- Risky Applicant")
     #Business rule
     if credit==0:
         st.error("❌ High Risk: Poor Credit History")
@@ -80,7 +80,7 @@ if foir>0.5:
         st.success( f"✅ Loan Approved ({proba[0][1]*100:.2f}% confidence)")
     else:
         st.error(f"❌ Loan Rejected({proba[0][1]*100:.2f}% confidence)")
-     high(FOIR>50%)")
+     
 
 
 
