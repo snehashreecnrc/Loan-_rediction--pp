@@ -6,8 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 #Page config
 st.set_page_config(page_title="Loan Prediction" , layout="centered")
-#Ui
-obligation = st.number_input("Existing Monthly Obligations (EMI)")
+
 
 #Title
 st.title("🏦Loan Approval Prediction")
@@ -48,6 +47,8 @@ imp_df= pd.DataFrame({
 st.subheader("📊 Feature Importance")
 st.bar_chart(imp_df.set_index('Feature'))
 
+
+
 #------------------User Input-------------------
 st.subheader("Enter Applicant Details")
 
@@ -55,6 +56,7 @@ credit = st.selectbox("Credit History (1 = Good, 0 = Bad)", [1,0])
 income = st.number_input("Applicant Income")
 loan = st.number_input("Loan Amount")
 co_income = st.number_input("Coapplicant Income")
+obligation = st.number_input("Existing Monthly Obligations (EMI)")
 
 total_income = income + co_income
 ratio = total_income / loan if loan != 0 else 0
@@ -67,6 +69,8 @@ input_scaled = scaler.transform(input_data)
 #---------------------Prediction--------------
 if st.button("Predict"):
 
+if foir>0.5:
+        dt.error("❌ High Risk: Obligation too
     #Business rule
     if credit==0:
         st.error("❌ High Risk: Poor Credit History")
@@ -76,8 +80,7 @@ if st.button("Predict"):
         st.success( f"✅ Loan Approved ({proba[0][1]*100:.2f}% confidence)")
     else:
         st.error(f"❌ Loan Rejected({proba[0][1]*100:.2f}% confidence)")
-    if foir>0.5:
-        dt.error("❌ High Risk: Obligation too high(FOIR>50%)")
+     high(FOIR>50%)")
 
 
 
