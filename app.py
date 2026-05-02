@@ -70,7 +70,7 @@ input_scaled = scaler.transform(input_data)
 if st.button("Predict"):
 
     if foir > 0.5:
-        dt.warning("❌ High FOIR(>50%)- Risky Applicant")
+        st.warning("❌ High FOIR(>50%)- Risky Applicant")
     #Business rule
     if credit==0:
         st.error("❌ High Risk: Poor Credit History")
