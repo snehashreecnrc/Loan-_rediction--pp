@@ -20,7 +20,6 @@ df=pd.read_csv("train (1).csv")
 df['TotalIncome']=df['ApplicantIncome']+df['CoapplicantIncome']
 df['Income_Loan_Ratio']=df['TotalIncome']/df['LoanAmount']
 
-foir=(obligation+loan)/total_income if total_income!= 0 else 0
 
 #prepare data
 
@@ -59,6 +58,8 @@ co_income = st.number_input("Coapplicant Income")
 
 total_income = income + co_income
 ratio = total_income / loan if loan != 0 else 0
+
+foir=(obligation+loan)/total_income if total_income != 0 else 0
 
 input_data = np.array([[credit, income, loan, total_income, ratio]])
 input_scaled = scaler.transform(input_data)
