@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 st.set_page_config(page_title="Loan Prediction" , layout="centered")
 
 #Title
-st.titlle("🏦Loan Approval Prediction")
+st.title("🏦Loan Approval Prediction")
 st.write("This app predicts loan approval based on financial and credit details.")
 
 #load data
