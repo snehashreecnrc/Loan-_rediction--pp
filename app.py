@@ -37,7 +37,7 @@ model.fit(X_scaled, y)
 #-------------------Feature importance ------------------
 importance= model.feature_importances_
 features=X.columns
-imp_ df= pd.DataFrame({
+imp_df= pd.DataFrame({
     'Feature':features,
     'Importance': importance 
 }).sort_values(by='Importance', ascending=False)
