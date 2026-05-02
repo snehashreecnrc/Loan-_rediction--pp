@@ -6,6 +6,8 @@ from sklearn.ensemble import RandomForestClassifier
 
 #Page config
 st.set_page_config(page_title="Loan Prediction" , layout="centered")
+#Ui
+obligation = st.number_input("Existing Monthly Obligations (EMI)")
 
 #Title
 st.title("🏦Loan Approval Prediction")
@@ -17,6 +19,8 @@ df=pd.read_csv("train (1).csv")
 #feature enineering
 df['TotalIncome']=df['ApplicantIncome']+df['CoapplicantIncome']
 df['Income_Loan_Ratio']=df['TotalIncome']/df['LoanAmount']
+
+foir=(obligation+loan)/total_incomr if total_income!= 0 else 0
 
 #prepare data
 
@@ -71,6 +75,8 @@ if st.button("Predict"):
         st.success( f"✅ Loan Approved ({proba[0][1]*100:.2f}% confidence)")
     else:
         st.error(f"❌ Loan Rejected({proba[0][1]*100:.2f}% confidence)")
+    if foir>0.5:
+        dt.error("❌ High Risk: Obligation too high(FOIR>50%)")
 
 
 
