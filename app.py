@@ -20,7 +20,7 @@ df=pd.read_csv("train (1).csv")
 df['TotalIncome']=df['ApplicantIncome']+df['CoapplicantIncome']
 df['Income_Loan_Ratio']=df['TotalIncome']/df['LoanAmount']
 
-foir=(obligation+loan)/total_incomr if total_income!= 0 else 0
+foir=(obligation+loan)/total_income if total_income!= 0 else 0
 
 #prepare data
 
